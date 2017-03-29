@@ -1,0 +1,19 @@
+{{ define "body" }}
+	<h1>
+		{{.Title}}
+	</h1>
+	<h2>{{ .Company}}</h2>
+
+	<small>
+	Posted
+	{{ .Created | time }}
+	{{ if not (.Created.Equal .Updated) }}
+		, Updated {{ .Updated | time }}
+	{{ end }}
+	</small>
+
+	{{ .Description | markdown }}
+
+	<h2>Contact</h2>
+	{{ .Contact }}
+{{ end }}

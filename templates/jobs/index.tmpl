@@ -1,0 +1,13 @@
+{{ define "body" }}
+	<a href="/new" class="btn btn-default">Post a new job</a>
+
+	<h2>Job listings</h2>
+
+	<ul>
+	{{ range . }}
+		<li>
+			<a href="/jobs/{{ .ID }}">{{.Title}}</a> at {{ .Company }}
+		</li>
+	{{ end }}
+	</ul>
+{{ end }}

@@ -1,0 +1,26 @@
+{{ define "body" }}
+	<h2>Post a Job</h2>
+	<form action="/jobs" method="post">
+		<div class="form-group">
+			<label>Job Title</label>
+			<input type="text" name="title" class="form-control" placeholder="Sprocket designer"/>
+		</div>
+		<div class="form-group">
+			<label>Company Name</label>
+			<input type="text" name="company" class="form-control" placeholder="Spacely Space Sprockets"/>
+		</div>
+		<div class="form-group">
+			<label>Description</label>
+			<textarea name="description" class="form-control"></textarea>
+			<p class="help-block">
+			The description supports <a href="https://daringfireball.net/projects/markdown/syntax">standard markdown format</a> along with some <a href="https://github.com/russross/blackfriday#extensions">extensions</a>.
+			</p>
+		</div>
+		<div class="form-group">
+			<label>Who to contact (phone, email, etc)</label>
+			<input type="text" name="contact" class="form-control" placeholder="Cosmo Spacely cosmo@example.com"/>
+		</div>
+
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+{{ end }}
