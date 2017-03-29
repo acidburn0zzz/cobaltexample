@@ -10,5 +10,5 @@ CREATE TABLE jobs (
 
 -- Insert some seed data
 INSERT INTO jobs (id, title, company, description, contact, created, updated)
-VALUES (1, 'Marketing Developer', 'Acme Co', 'This is a *great* job!. Work with our marketing team to develop solutions.', 'Maryam (maryam@example.com)', now(), now()),
-(2, 'Designer', 'Acme Co', 'This is _perfect_ for create types!', 'Maryam (maryam@example.com)', now(), now());
+VALUES (1, 'Marketing Developer', 'Acme Co', 'This is a *great* job! Work with our marketing team to develop solutions.', 'Maryam (maryam@example.com)', now(), now()),
+(2, 'Designer', 'Acme Co', 'This is _perfect_ for creative types!', 'Maryam (maryam@example.com)', now(), now());
