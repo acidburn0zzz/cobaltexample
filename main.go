@@ -17,7 +17,12 @@ import (
 func app(db *sqlx.DB) *cobalt.Cobalt {
 	c := cobalt.New(JSONEncoder{})
 
-	c.Templates.Development = true
+	// Recompile templates for each request.
+	if os.Getenv("ENV") != "prod" {
+		c.Templates.Development = true
+	}
+
+	// Define our custom template functions
 	c.Templates.Funcs = template.FuncMap{
 		"markdown": func(s string) template.HTML {
 			unsafe := blackfriday.MarkdownCommon([]byte(s))
@@ -31,6 +36,7 @@ func app(db *sqlx.DB) *cobalt.Cobalt {
 
 	j := &JobHandlers{db: db}
 
+	// Wire up job handlers to routes
 	c.Get("/", j.Index)
 	c.Get("/new", j.New)
 	c.Post("/jobs", j.Create)
