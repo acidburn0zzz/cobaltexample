@@ -1,4 +1,4 @@
-# cobaltapp
+# cobaltexample
 
 This is an example app that shows how to use the [cobalt](https://github.com/ardanlabs/cobalt) framework to create a classic web application.
 
